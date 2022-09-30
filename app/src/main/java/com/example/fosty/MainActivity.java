@@ -7,7 +7,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,4 +28,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.dispatchTouchEvent(ev);
     }
+
+    public void loginButton (View v){
+        System.out.println("holaaaaaaaa");
+    }
+
 }
