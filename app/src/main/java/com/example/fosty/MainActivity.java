@@ -7,11 +7,15 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
+
+import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,8 +29,10 @@ public class MainActivity extends AppCompatActivity {
 
         LayoutInflater inflater = LayoutInflater.from(MainActivity.this); // 1
         theInflatedView = inflater.inflate(R.layout.fragment_study_panel, null); // 2 and 3
+        theInflatedView.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
 
         final DrawerLayout drawerLayout = theInflatedView.findViewById(R.id.drawerLayoutHeader);
+        drawerLayout.setScrimColor(Color.TRANSPARENT);
 
         theInflatedView.findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
             @Override

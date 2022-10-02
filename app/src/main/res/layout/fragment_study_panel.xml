@@ -78,11 +78,112 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="500dp"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="56dp"
+        android:background="@color/dark_pink"
         android:layout_gravity="start"
-        android:layout_marginTop="56dp">
+        >
 
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <TableRow
+                android:id="@+id/navigationRow1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+>
+
+                <ImageView
+                    android:id="@+id/imageRow1"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/timer_icon"
+                    app:tint="@color/dark_blue" />
+
+                <TextView
+                    android:id="@+id/textRow1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:autoSizeTextType="none"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="10dp"
+                    android:text="Study"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/navigationRow2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+>
+
+                <ImageView
+                    android:id="@+id/imageRow2"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/task_icon"
+                    app:tint="@color/dark_blue" />
+
+                <TextView
+                    android:id="@+id/textRow2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:autoSizeTextType="none"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="10dp"
+                    android:text="Tasks"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/navigationRow3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginVertical="10dp"
+>
+
+                <ImageView
+                    android:id="@+id/imageRow3"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/friends_icon"
+                    app:tint="@color/dark_blue" />
+
+                <TextView
+                    android:id="@+id/textRow3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="15"
+                    android:autoSizeTextType="none"
+                    android:fontFamily="@font/alata"
+                    android:paddingLeft="10dp"
+                    android:text="Friends"
+                    android:textAlignment="viewStart"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+        </TableLayout>
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
