@@ -31,8 +31,8 @@
 
         <ImageView
             android:id="@+id/imageMenu"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:clickable="true"
             android:src="@drawable/menu_lines"
             app:layout_constraintBottom_toBottomOf="@+id/toolbar"
@@ -40,8 +40,8 @@
             app:layout_constraintHorizontal_bias="0.043"
             app:layout_constraintStart_toStartOf="@+id/toolbar"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25"
-            app:tint="@color/dark_blue"
+            app:layout_constraintVertical_bias="0.50"
+            app:tint="@color/dark_grey"
             tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
         <TextView
@@ -81,7 +81,7 @@
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
-        android:background="@color/dark_pink"
+        android:background="@color/dark_blue"
         android:layout_gravity="start"
         >
 
@@ -95,7 +95,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="10dp"
->
+                android:background="@drawable/ripple_effect"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/imageRow1"
@@ -104,16 +105,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:src="@drawable/timer_icon"
-                    app:tint="@color/dark_blue" />
+                    app:tint="@color/dark_grey" />
 
                 <TextView
                     android:id="@+id/textRow1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="15"
                     android:autoSizeTextType="none"
+                    android:background="@drawable/bottom_line"
                     android:fontFamily="@font/alata"
-                    android:paddingLeft="10dp"
                     android:text="Study"
                     android:textAlignment="viewStart"
                     android:textSize="20sp"
@@ -126,7 +128,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="10dp"
->
+                android:background="@drawable/ripple_effect"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/imageRow2"
@@ -135,16 +138,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:src="@drawable/task_icon"
-                    app:tint="@color/dark_blue" />
+                    app:tint="@color/dark_grey" />
 
                 <TextView
                     android:id="@+id/textRow2"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="15"
                     android:autoSizeTextType="none"
+                    android:background="@drawable/bottom_line"
                     android:fontFamily="@font/alata"
-                    android:paddingLeft="10dp"
                     android:text="Tasks"
                     android:textAlignment="viewStart"
                     android:textSize="20sp"
@@ -157,7 +161,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginVertical="10dp"
->
+                android:background="@drawable/ripple_effect"
+                android:clickable="true">
 
                 <ImageView
                     android:id="@+id/imageRow3"
@@ -166,16 +171,17 @@
                     android:layout_weight="1"
                     android:scaleType="fitCenter"
                     android:src="@drawable/friends_icon"
-                    app:tint="@color/dark_blue" />
+                    app:tint="@color/dark_grey" />
 
                 <TextView
                     android:id="@+id/textRow3"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
                     android:layout_weight="15"
                     android:autoSizeTextType="none"
+                    android:background="@drawable/bottom_line"
                     android:fontFamily="@font/alata"
-                    android:paddingLeft="10dp"
                     android:text="Friends"
                     android:textAlignment="viewStart"
                     android:textSize="20sp"
