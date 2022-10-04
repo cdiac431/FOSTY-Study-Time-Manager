@@ -74,6 +74,16 @@
             app:layout_constraintTop_toTopOf="@+id/toolbar"
             app:layout_constraintVertical_bias="0.4" />
 
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar"
+            android:id="@+id/navHostFragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:defaultNavHost="true"
+            app:navGraph="@navigation/main"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -83,113 +93,8 @@
         android:layout_marginTop="56dp"
         android:background="@color/dark_blue"
         android:layout_gravity="start"
-        >
+        app:menu="@menu/navigation_menu"
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp">
-
-            <TableRow
-                android:id="@+id/navigationRow1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="10dp"
-                android:background="@drawable/ripple_effect"
-                android:clickable="true">
-
-                <ImageView
-                    android:id="@+id/imageRow1"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/timer_icon"
-                    app:tint="@color/dark_grey" />
-
-                <TextView
-                    android:id="@+id/textRow1"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="15"
-                    android:autoSizeTextType="none"
-                    android:background="@drawable/bottom_line"
-                    android:fontFamily="@font/alata"
-                    android:text="Study"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/navigationRow2"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="10dp"
-                android:background="@drawable/ripple_effect"
-                android:clickable="true">
-
-                <ImageView
-                    android:id="@+id/imageRow2"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/task_icon"
-                    app:tint="@color/dark_grey" />
-
-                <TextView
-                    android:id="@+id/textRow2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="15"
-                    android:autoSizeTextType="none"
-                    android:background="@drawable/bottom_line"
-                    android:fontFamily="@font/alata"
-                    android:text="Tasks"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/navigationRow3"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginVertical="10dp"
-                android:background="@drawable/ripple_effect"
-                android:clickable="true">
-
-                <ImageView
-                    android:id="@+id/imageRow3"
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
-                    android:layout_weight="1"
-                    android:scaleType="fitCenter"
-                    android:src="@drawable/friends_icon"
-                    app:tint="@color/dark_grey" />
-
-                <TextView
-                    android:id="@+id/textRow3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_weight="15"
-                    android:autoSizeTextType="none"
-                    android:background="@drawable/bottom_line"
-                    android:fontFamily="@font/alata"
-                    android:text="Friends"
-                    android:textAlignment="viewStart"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-        </TableLayout>
-    </com.google.android.material.navigation.NavigationView>
+        />
 
 </androidx.drawerlayout.widget.DrawerLayout>

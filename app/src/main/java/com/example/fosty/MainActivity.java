@@ -1,12 +1,19 @@
 package com.example.fosty;
 
+import static androidx.navigation.Navigation.findNavController;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.NavGraph;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,8 +34,10 @@ public class MainActivity extends AppCompatActivity {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
 
-        LayoutInflater inflater = LayoutInflater.from(MainActivity.this); // 1
-        theInflatedView = inflater.inflate(R.layout.fragment_study_panel, null); // 2 and 3
+
+
+        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
+        theInflatedView = inflater.inflate(R.layout.fragment_study_panel, null);
         theInflatedView.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
 
         final DrawerLayout drawerLayout = theInflatedView.findViewById(R.id.drawerLayoutHeader);
@@ -40,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 drawerLayout.openDrawer(GravityCompat.START);
             }
         });
+
+
+
     }
 
 
@@ -59,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
 
     public void loginButton (View v){
         setContentView(theInflatedView);
+        NavigationView navigationView = findViewById(R.id.navigationView);
+        navigationView.setItemTextColor(ColorStateList.valueOf(Color.GRAY));
+        navigationView.setItemIconTintList(ColorStateList.valueOf(Color.GRAY));
+
+
+        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
+        NavigationUI.setupWithNavController(navigationView, navController);
     }
 
 }

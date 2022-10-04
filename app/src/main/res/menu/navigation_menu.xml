@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menuStudy"
+        android:icon="@drawable/timer_icon"
+        android:title="Study"
+        android:iconTint="@color/dark_grey"
+        android:fontFamily="@font/alata"/>
+    <item
+        android:id="@+id/menuTasks"
+        android:icon="@drawable/task_icon"
+        android:title="Tasks"
+        android:iconTint="@color/dark_grey"
+        android:fontFamily="@font/alata" />
+    <item
+        android:id="@+id/menuFriends"
+        android:icon="@drawable/friends_icon"
+        android:title="Friends"
+        android:iconTint="@color/dark_grey"
+        android:fontFamily="@font/alata"/>
+    <item
+        android:id="@+id/menuOut"
+        android:icon="@drawable/log_out"
+        android:title="Log out"
+        android:iconTint="@color/light_green"
+        android:fontFamily="@font/alata"/>
+
+</menu>
