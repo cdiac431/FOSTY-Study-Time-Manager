@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "707140571565",
+    "project_id": "fosty-875df",
+    "storage_bucket": "fosty-875df.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:707140571565:android:da577ef1caf67861615124",
+        "android_client_info": {
+          "package_name": "com.example.fosty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "707140571565-2vnp86brv7ha8oeo8gdhbu327qtlm7vv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZxWhwqfUvBvchtC6s1oj5UJY5ssaRCZg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "707140571565-2vnp86brv7ha8oeo8gdhbu327qtlm7vv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
