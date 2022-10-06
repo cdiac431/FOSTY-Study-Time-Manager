@@ -6,6 +6,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,7 +33,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
     private FirebaseAuth mAuth;
 
-    View theInflatedView;
+    private ImageView imageBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,9 +42,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
 
-        LayoutInflater inflater = LayoutInflater.from(RegisterUser.this);
-        theInflatedView = inflater.inflate(R.layout.fragment_study_panel, null);
-        theInflatedView.startAnimation(AnimationUtils.loadAnimation(getApplicationContext(), android.R.anim.fade_in));
+        imageBack = (ImageView) findViewById(R.id.backIcon);
+        imageBack.setOnClickListener(this);
 
         registerUser = (Button) findViewById(R.id.registerNewUser);
         registerUser.setOnClickListener(this);
@@ -58,6 +59,9 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.registerNewUser:
                 registerUser();
+                break;
+            case R.id.backIcon:
+                finish();
                 break;
         }
     }
@@ -120,9 +124,6 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
                                                 Toast.makeText(RegisterUser.this, "User has ben registered succesfully!", Toast.LENGTH_LONG).show();
-
-                                                setContentView(theInflatedView);
-
                                             } else{
                                                 Toast.makeText(RegisterUser.this, "Failed to register user! Try again!", Toast.LENGTH_LONG).show();
                                             }
