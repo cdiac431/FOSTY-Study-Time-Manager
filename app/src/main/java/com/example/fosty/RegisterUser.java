@@ -100,7 +100,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
         }
 
         if (sPassword.length() < 8){
-            passwordText.setError("Min password length should be at least 8 caracters!");
+            passwordText.setError("Min password length should be at least 8 characters!");
             passwordText.requestFocus();
             return;
         }
