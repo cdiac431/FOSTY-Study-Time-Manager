@@ -7,12 +7,14 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.NavigationUI;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationView;
@@ -24,10 +26,21 @@ public class ProfileUser extends AppCompatActivity {
     public View theInflatedView;
     public TextView name;
 
+    private LinearLayout logOutLinear;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_user);
+
+        logOutLinear = (LinearLayout) findViewById(R.id.logOutLayout);
+        logOutLinear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent (ProfileUser.this, MainActivity.class));
+            }
+        });
 
         name = (TextView) findViewById(R.id.profileName);
 

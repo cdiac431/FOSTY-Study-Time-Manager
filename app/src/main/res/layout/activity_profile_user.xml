@@ -91,34 +91,40 @@
         android:layout_width="200dp"
         android:layout_height="match_parent"
         android:layout_marginTop="56dp"
-        android:background="@color/dark_blue"
         android:layout_gravity="start"
-        app:menu="@menu/navigation_menu" >
+        android:background="@color/dark_blue"
+        app:menu="@menu/navigation_menu">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+        <LinearLayout
+            android:id="@+id/logOutLayout"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
             android:layout_marginLeft="25dp"
             android:layout_marginBottom="40dp"
+            android:background="?attr/selectableItemBackground"
             android:clickable="true"
-            app:srcCompat="@drawable/log_out"
-            tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+            android:orientation="horizontal"
+            tools:ignore="TouchTargetSizeCheck">
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="69dp"
-            android:layout_height="40dp"
-            android:layout_gravity="bottom"
-            android:layout_marginLeft="55dp"
-            android:layout_marginBottom="30dp"
-            android:clickable="true"
-            android:fontFamily="@font/alata"
-            android:text="Log out"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                app:srcCompat="@drawable/log_out"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="69dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="5dp"
+                android:fontFamily="@font/alata"
+                android:text="Log out"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
 
     </com.google.android.material.navigation.NavigationView>
 </androidx.drawerlayout.widget.DrawerLayout>
