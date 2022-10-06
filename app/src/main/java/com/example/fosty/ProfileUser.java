@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
@@ -45,6 +46,7 @@ public class ProfileUser extends AppCompatActivity {
         name = (TextView) findViewById(R.id.profileName);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
         name.setText(user.getEmail());
 
         final DrawerLayout drawerLayout = findViewById(R.id.drawerLayoutHeader);
@@ -64,7 +66,9 @@ public class ProfileUser extends AppCompatActivity {
 
         NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
         NavigationUI.setupWithNavController(navigationView, navController);
-
-
+    }
+    @Override
+    public void onBackPressed() {
+        // Do Here what ever you want do on back press;
     }
 }

@@ -15,4 +15,9 @@
         android:name="com.example.fosty.TasksFragment"
         android:label="Tasks"
         tools:layout="@layout/fragment_tasks" />
+    <fragment
+        android:id="@+id/menuFriends"
+        android:name="com.example.fosty.FriendsFragment"
+        android:label="Friends"
+        tools:layout="@layout/fragment_friends" />
 </navigation>

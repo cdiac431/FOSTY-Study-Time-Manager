@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/light_pink"
-    tools:context=".TasksFragment">
+    tools:context=".FriendsFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Tasks fragment" />
+        android:text="Fragment friends" />
 
 </FrameLayout>

@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, RegisterUser.class));
                 break;
             case R.id.loginButton:
-                userLogin();
-                //startActivity(new Intent(MainActivity.this, ProfileUser.class));
+                //userLogin();
+                startActivity(new Intent(MainActivity.this, ProfileUser.class));
                 break;
             }
         }
@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String sEmail = emailText.getText().toString().trim();
         String sPassword = passwordText.getText().toString().trim();
-/*
+
         if (sEmail.isEmpty()){
             emailText.setError("Email is required!");
             emailText.requestFocus();
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             passwordText.setError("Min password length is 6 characters!");
             passwordText.requestFocus();
             return;
-        }*/
+        }
 
         mAuth.signInWithEmailAndPassword("cdiac431@gmail.com", "cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
