@@ -19,11 +19,5 @@
         android:title="Friends"
         android:iconTint="@color/dark_grey"
         android:fontFamily="@font/alata"/>
-    <item
-        android:id="@+id/menuOut"
-        android:icon="@drawable/log_out"
-        android:title="Log out"
-        android:iconTint="@color/light_green"
-        android:fontFamily="@font/alata"/>
 
 </menu>

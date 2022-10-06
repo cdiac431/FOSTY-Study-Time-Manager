@@ -33,10 +33,11 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    public View theInflatedView;
+
     private Button registerButton, loginButton;
     private TextInputEditText emailText, passwordText;
 
@@ -59,23 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         emailText = (TextInputEditText) findViewById(R.id.emailInputLogin);
         passwordText = (TextInputEditText) findViewById(R.id.passwordInputLogin);
 
-
-        LayoutInflater inflater = LayoutInflater.from(MainActivity.this);
-        theInflatedView = inflater.inflate(R.layout.fragment_study_panel, null);
-        theInflatedView.startAnimation(AnimationUtils.loadAnimation(this, android.R.anim.fade_in));
-
-        final DrawerLayout drawerLayout = theInflatedView.findViewById(R.id.drawerLayoutHeader);
-        drawerLayout.setScrimColor(Color.TRANSPARENT);
-
-        theInflatedView.findViewById(R.id.imageMenu).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                drawerLayout.openDrawer(GravityCompat.START);
-            }
-        });
-
-
-
     }
 
 
@@ -93,17 +77,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.dispatchTouchEvent(ev);
     }
 
-    public void loginButton (View v){
-        setContentView(theInflatedView);
-        NavigationView navigationView = findViewById(R.id.navigationView);
-        navigationView.setItemTextColor(ColorStateList.valueOf(Color.GRAY));
-        navigationView.setItemIconTintList(ColorStateList.valueOf(Color.GRAY));
-
-
-        NavController navController = Navigation.findNavController(this, R.id.navHostFragment);
-        NavigationUI.setupWithNavController(navigationView, navController);
-    }
-
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -112,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.loginButton:
                 userLogin();
+                //startActivity(new Intent(MainActivity.this, ProfileUser.class));
                 break;
             }
         }
@@ -120,7 +94,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         String sEmail = emailText.getText().toString().trim();
         String sPassword = passwordText.getText().toString().trim();
-
+/*
         if (sEmail.isEmpty()){
             emailText.setError("Email is required!");
             emailText.requestFocus();
@@ -143,14 +117,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             passwordText.setError("Min password length is 6 characters!");
             passwordText.requestFocus();
             return;
-        }
+        }*/
 
-        mAuth.signInWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword("cdiac431@gmail.com", "cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
-                    // Redirect to user profile
-                    
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+                    if (user.isEmailVerified()){
+                        startActivity(new Intent(MainActivity.this, ProfileUser.class));
+                    } else {
+                        user.sendEmailVerification();
+                        Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
+                    }
+
+
                 } else {
                     Toast.makeText(MainActivity.this, "Failed to login! Plese check out your credentials", Toast.LENGTH_LONG).show();
                 }

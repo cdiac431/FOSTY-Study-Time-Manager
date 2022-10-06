@@ -14,14 +14,18 @@
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout-v31/activity_register_user.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_login_user.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_profile_user.xml" value="0.36666666666666664" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/activity_register_user.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/content_profile_user.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_first.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_header_panel.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_login_panel.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_second.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_study.xml" value="0.18802083333333333" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_study_panel.xml" value="0.22160664819944598" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/fragment_tasks.xml" value="0.18802083333333333" />
-        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/layout_navigation_study.xml" value="0.365625" />
+        <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/layout/layout_navigation_study.xml" value="0.22" />
         <entry key="..\:/AndroidStudioProjects/FOSTY-Study-Time-Manager/app/src/main/res/menu/navigation_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
