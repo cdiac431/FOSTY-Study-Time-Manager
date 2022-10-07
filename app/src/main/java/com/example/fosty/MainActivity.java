@@ -84,8 +84,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, RegisterUser.class));
                 break;
             case R.id.loginButton:
-                //userLogin();
-                startActivity(new Intent(MainActivity.this, ProfileUser.class));
+                userLogin();
+                //startActivity(new Intent(MainActivity.this, ProfileUser.class));
                 break;
             }
         }
@@ -119,16 +119,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }
 
-        mAuth.signInWithEmailAndPassword("cdiac431@gmail.com", "cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    startActivity(new Intent(MainActivity.this, ProfileUser.class));
 
                     if (user.isEmailVerified()){
-                        startActivity(new Intent(MainActivity.this, ProfileUser.class));
+
                     } else {
-                        user.sendEmailVerification();
                         Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
                     }
 

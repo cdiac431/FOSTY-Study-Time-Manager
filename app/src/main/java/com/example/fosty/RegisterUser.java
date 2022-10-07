@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterUser extends AppCompatActivity implements View.OnClickListener  {
@@ -115,7 +116,7 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            User user = new User(sFullName, sUsername, sEmail, sPassword);
+                            User user = new User(sFullName,sUsername,sEmail,sPassword);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -123,6 +124,8 @@ public class RegisterUser extends AppCompatActivity implements View.OnClickListe
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()){
+                                                FirebaseUser userFirebase = FirebaseAuth.getInstance().getCurrentUser();
+                                                userFirebase.sendEmailVerification();
                                                 Toast.makeText(RegisterUser.this, "User has ben registered succesfully!", Toast.LENGTH_LONG).show();
                                             } else{
                                                 Toast.makeText(RegisterUser.this, "Failed to register user! Try again!", Toast.LENGTH_LONG).show();
