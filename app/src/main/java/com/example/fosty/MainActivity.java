@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private Button registerButton, loginButton;
     private TextInputEditText emailText, passwordText;
-
+    private TextView resetPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -59,6 +60,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         emailText = (TextInputEditText) findViewById(R.id.emailInputLogin);
         passwordText = (TextInputEditText) findViewById(R.id.passwordInputLogin);
+
+        resetPassword = (TextView) findViewById(R.id.resetPasswordView);
+        resetPassword.setOnClickListener(this);
 
     }
 
@@ -86,6 +90,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.loginButton:
                 userLogin();
                 //startActivity(new Intent(MainActivity.this, ProfileUser.class));
+                break;
+            case R.id.resetPasswordView:
+                startActivity(new Intent(this, ResetPassword.class));
                 break;
             }
         }
@@ -131,8 +138,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     } else {
                         Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
                     }
-
-
                 } else {
                     Toast.makeText(MainActivity.this, "Failed to login! Plese check out your credentials", Toast.LENGTH_LONG).show();
                 }
