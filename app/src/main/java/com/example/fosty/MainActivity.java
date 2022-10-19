@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void userLogin() {
 
-        String sEmail = emailText.getText().toString().trim();
+       /* String sEmail = emailText.getText().toString().trim();
         String sPassword = passwordText.getText().toString().trim();
 
         if (sEmail.isEmpty()){
@@ -124,9 +124,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             passwordText.setError("Min password length is 6 characters!");
             passwordText.requestFocus();
             return;
-        }
+        }*/
 
-        mAuth.signInWithEmailAndPassword(sEmail, sPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword("cdiac431@gmail.com", "cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){

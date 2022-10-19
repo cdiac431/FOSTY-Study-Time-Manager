@@ -16,6 +16,7 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,8 @@ public class ProfileUser extends AppCompatActivity {
     private FirebaseUser user;
     private DatabaseReference reference;
     private String userId;
+
+    private ImageView profileImg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +56,13 @@ public class ProfileUser extends AppCompatActivity {
         });
 
         userName = (TextView) findViewById(R.id.profileName);
+        profileImg = (ImageView) findViewById(R.id.profileImage);
+        profileImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ProfileUser.this, UserProfileSettings.class));
+            }
+        });
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
