@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void userLogin() {
 
-       /* String sEmail = emailText.getText().toString().trim();
+      /*  String sEmail = emailText.getText().toString().trim();
         String sPassword = passwordText.getText().toString().trim();
 
         if (sEmail.isEmpty()){
@@ -126,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return;
         }*/
 
-        mAuth.signInWithEmailAndPassword("cdiac431@gmail.com", "cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword("cdiac431@gmail.com","cc19812001").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
@@ -135,8 +135,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     if (user.isEmailVerified()){
 
+
                     } else {
                         Toast.makeText(MainActivity.this, "Check your email to verify your account!", Toast.LENGTH_LONG).show();
+                        FirebaseUser userFirebase = FirebaseAuth.getInstance().getCurrentUser();
+                        userFirebase.sendEmailVerification();
                     }
                 } else {
                     Toast.makeText(MainActivity.this, "Failed to login! Plese check out your credentials", Toast.LENGTH_LONG).show();

@@ -60,6 +60,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
+        <ImageView
+            android:id="@+id/backIconSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.044"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.086"
+            app:srcCompat="@drawable/back_icon"
+            app:tint="@color/light_pink" />
+
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/profileImage"
             android:layout_width="150dp"
@@ -76,11 +91,10 @@
             app:layout_constraintVertical_bias="0.192" />
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/usernameHeader"
             android:layout_width="325dp"
             android:layout_height="39dp"
             android:fontFamily="@font/alata"
-            android:text="Username"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold"
@@ -161,4 +175,40 @@
             android:textSize="14sp"
             tools:ignore="TextContrastCheck" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailAccountLayout"
+        android:layout_width="280dp"
+        android:layout_height="55dp"
+        android:focusableInTouchMode="false"
+        android:textColorHint="@color/dark_grey"
+        app:boxStrokeColor="#00FFFFFF"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:endIconTint="#00FFFFFF"
+        app:hintTextColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameAccountLayout"
+        app:layout_constraintVertical_bias="0"
+        app:startIconTint="#00FFFFFF">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailAccountEdit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/light_pink"
+            android:clickable="false"
+            android:editable="false"
+            android:hint="Email"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:textAlignment="viewStart"
+            android:textColorHint="#757575"
+            android:textSize="14sp"
+            tools:ignore="TextContrastCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

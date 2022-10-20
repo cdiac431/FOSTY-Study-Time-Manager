@@ -53,7 +53,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/alata"
                 android:paddingTop="15dp"
-                android:text="Cristian Diac"
+                android:text=""
                 android:textAlignment="textEnd"
                 android:textSize="16sp"
                 android:textStyle="bold" />
