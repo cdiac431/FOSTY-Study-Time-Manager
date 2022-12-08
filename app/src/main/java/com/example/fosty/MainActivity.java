@@ -27,7 +27,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -35,6 +34,8 @@ import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.analytics.FirebaseAnalytics;
+
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -43,12 +44,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private TextInputEditText emailText, passwordText;
     private TextView resetPassword;
     private FirebaseAuth mAuth;
-
+    private FirebaseAnalytics mFirebaseAnalytics;
+    private Bundle bundle;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         setContentView(R.layout.activity_main);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+        bundle = new Bundle();
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -130,6 +135,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
+
+                    /*bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "2");
+                    bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "Cristian2");
+                    bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
+                    mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);*/
+
+                    bundle.putString("username", "cdiac431");
+                    bundle.putString("password", "12345");
+                    mFirebaseAnalytics.logEvent("login_succesfully", bundle);
+                    System.out.println(bundle+"HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                     startActivity(new Intent(MainActivity.this, ProfileUser.class));
 
